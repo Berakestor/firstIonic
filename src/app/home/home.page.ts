@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NotesService } from './notes.service';
+import { Note } from './note.model';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +8,16 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  notes: Note[];
 
-  constructor() {}
+  constructor(private noteService: NotesService) {}
+
+  ngOnInit() {
+    this.notes = this.noteService.getAllNotes();
+  }
+
+  ionViewWillEnter() {
+    this.notes = this.noteService.getAllNotes();
+  }
 
 }

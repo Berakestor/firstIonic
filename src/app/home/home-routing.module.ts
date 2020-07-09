@@ -5,8 +5,16 @@ import { HomePage } from './home.page';
 const routes: Routes = [
   {
     path: '',
-    component: HomePage,
-  }
+    component: HomePage
+  },
+  {
+    path: 'note-create',
+    loadChildren: () => import('./note-create/note-create.module').then( m => m.NoteCreatePageModule)
+  },
+  {
+    path: ':noteId',
+    loadChildren: () => import('./note-details/note-details.module').then( m => m.NoteDetailsPageModule)
+  },
 ];
 
 @NgModule({
