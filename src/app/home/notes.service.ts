@@ -34,6 +34,10 @@ export class NotesService {
     })};
   }
 
+  getLastID() {
+    return this.notes[this.notes.length-1].id
+  }
+
   deleteNote(noteId: number) {
     this.notes = this.notes.filter(note => {
       return note.id !== noteId; 
@@ -51,6 +55,7 @@ export class NotesService {
       details: details,
       imageUrl: imageUrl
     }];
-
   }
+
+  
 }

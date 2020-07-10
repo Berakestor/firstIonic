@@ -20,8 +20,12 @@ export class NoteCreatePage implements OnInit {
   ngOnInit() {
   }
 
+  OnCancel() {
+    this.router.navigate(['/home']);
+  }
+
   OnCreateNote() {
-    this.noteId = this.notesService.getLength() + 1;
+    this.noteId = this.notesService.getLastID() + 1;
     this.notesService.createNote(this.noteId, this.title, this.details, this.imageUrl);
     this.router.navigate(['/home']);
   }

@@ -22,6 +22,6 @@
     <ion-textarea auto-grow [(ngModel)]="details" name="details"></ion-textarea>
   </ion-item>
 
-  <ion-button>Cancel</ion-button>
+  <ion-button (click)=OnCancel()>Cancel</ion-button>
   <ion-button (click)=OnCreateNote()>Create</ion-button>
 </ion-content>
